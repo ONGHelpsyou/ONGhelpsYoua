@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - ONG USA Helps You</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+
+    <main class="form-wrapper">
+        <h1>FORMULARIO DE REGISTRO</h1>
+        <h2 class="subtitle">(Programa de Apoyo - USA Helps You)</h2>
+        <p class="subtitle">
+            Completa tus datos. Verificaremos la información y nos comunicaremos contigo si tu solicitud es
+            seleccionada.
+        </p>
+
+        <form id="registroForm" autocomplete="off">
+            <!-- País -->
+            <div class="input-group">
+                <label>País (América Latina)</label>
+                <div class="acordeon" data-target="listaPaises">
+                    <span id="paisSeleccionado">Selecciona tu país</span>
+                    <span class="flecha">▼</span>
+                </div>
+                <div id="listaPaises" class="acordeon-lista oculto">
+                    <div data-valor="Argentina">Argentina</div>
+                    <div data-valor="Bolivia">Bolivia</div>
+                    <div data-valor="Brasil">Brasil</div>
+                    <div data-valor="Chile">Chile</div>
+                    <div data-valor="Colombia">Colombia</div>
+                    <div data-valor="Costa Rica">Costa Rica</div>
+                    <div data-valor="Cuba">Cuba</div>
+                    <div data-valor="Ecuador">Ecuador</div>
+                    <div data-valor="El Salvador">El Salvador</div>
+                    <div data-valor="Guatemala">Guatemala</div>
+                    <div data-valor="Honduras">Honduras</div>
+                    <div data-valor="México">México</div>
+                    <div data-valor="Nicaragua">Nicaragua</div>
+                    <div data-valor="Panamá">Panamá</div>
+                    <div data-valor="Paraguay">Paraguay</div>
+                    <div data-valor="Perú">Perú</div>
+                    <div data-valor="Puerto Rico">Puerto Rico</div>
+                    <div data-valor="República Dominicana">República Dominicana</div>
+                    <div data-valor="Uruguay">Uruguay</div>
+                    <div data-valor="Venezuela">Venezuela</div>
+                </div>
+                <input type="hidden" id="pais" name="pais" required />
+            </div>
+
+            <!-- Ciudad -->
+            <div class="input-group">
+                <label>Ciudad</label>
+                <div class="acordeon" data-target="listaCiudades">
+                    <span id="ciudadSeleccionada">Selecciona tu ciudad</span>
+                    <span class="flecha">▼</span>
+                </div>
+                <div id="listaCiudades" class="acordeon-lista oculto"></div>
+                <input type="hidden" id="ciudad" name="ciudad" required />
+            </div>
+
+            <!-- Nombre -->
+            <div class="input-group">
+                <label for="nombreCompleto">Nombre completo</label>
+                <input id="nombreCompleto" name="nombreCompleto" type="text" required />
+            </div>
+
+            <!-- Apellido -->
+            <div class="input-group">
+                <label for="apellidoCompleto">Apellido completo</label>
+                <input id="apellidoCompleto" name="apellidoCompleto" type="text" required />
+            </div>
+
+            <!-- Fecha nacimiento -->
+            <div class="input-group">
+                <label for="fechaNacimiento">Fecha de nacimiento</label>
+                <input id="fechaNacimiento" name="fechaNacimiento" type="date" required />
+            </div>
+
+            <!-- Edad -->
+            <div class="input-group">
+                <label for="edad">Edad</label>
+                <input id="edad" name="edad" type="number" min="0" max="120" required />
+            </div>
+
+            <!-- Tipo documento -->
+            <div class="input-group">
+                <label>Tipo de documento</label>
+                <div class="acordeon" data-target="listaDocs">
+                    <span id="docSeleccionado">Selecciona tipo de documento</span>
+                    <span class="flecha">▼</span>
+                </div>
+                <div id="listaDocs" class="acordeon-lista oculto">
+                    <div data-valor="DNI">DNI</div>
+                    <div data-valor="Cédula de identidad">CÉDULA DE IDENTIDAD</div>
+                    <div data-valor="Pasaporte">PASAPORTE</div>
+                    <div data-valor="Visa">VISA</div>
+                    <div data-valor="Otro">OTRO</div>
+                </div>
+                <input type="hidden" id="tipoDocumento" name="tipoDocumento" required />
+            </div>
+
+            <!-- Número documento -->
+            <div class="input-group">
+                <label for="numeroDocumento">Número de documento</label>
+                <input id="numeroDocumento" name="numeroDocumento" type="text" required />
+            </div>
+
+            <!-- Dirección -->
+            <div class="input-group">
+                <label for="direccion">Dirección</label>
+                <input id="direccion" name="direccion" type="text" required />
+            </div>
+
+            <!-- Teléfono -->
+            <div class="input-group">
+                <label for="telefono">Teléfono (celular)</label>
+                <div class="phone-wrapper">
+                    <span id="phoneFlag" class="phone-flag">🌐</span>
+                    <span id="phoneCode" class="phone-code">+--</span>
+                    <input id="telefono" name="telefono" type="tel" required placeholder="Número de celular" />
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" required />
+            </div>
+
+            <!-- Comentario -->
+            <div class="input-group">
+                <label for="mensaje">Comentario / Detalle (opcional)</label>
+                <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+            </div>
+
+            <!-- Captcha -->
+            <div class="input-group">
+                <label>No eres un robot</label>
+                <p class="captcha-text">
+                    Escribe correctamente el siguiente código (letras y números):
+                </p>
+                <div class="codigo-verificacion-wrapper">
+                    <span id="codigoGenerado" class="codigo-verificacion"></span>
+                    <button type="button" id="btnRefrescarCodigo" class="btn-mini">↻</button>
+                </div>
+                <input id="codigoIngresado" type="text" placeholder="Escribe el código mostrado" required />
+                <p id="errorCodigo" class="mensaje-error oculto">
+                    El código no coincide. Intenta nuevamente.
+                </p>
+            </div>
+
+            <!-- Enviar -->
+            <button type="submit" class="btn-enviar">Enviar datos</button>
+
+            <!-- Mensaje dinámico -->
+            <p id="mensajeExito" class="mensaje-exito oculto"></p>
+
+            <!-- Nota -->
+            <p class="nota-final">
+                Una vez que tu solicitud haya sido aceptada, ten a la mano la identificación personal
+                indicada en este formulario y un lugar bien iluminado para las tomas de fotografía.
+            </p>
+        </form>
+
+        <!-- Ver ruta -->
+        <button id="btnRuta" class="btn-mostrar">Ver la ruta de mi solicitud</button>
+    </main>
+
+    <!-- Ruta de solicitud -->
+    <section id="rutaSection" class="ruta-solicitud oculto">
+        <h2>Ruta de tu solicitud</h2>
+        <div id="estadoSolicitud" class="estado-solicitud estado-ninguno">
+            <span id="estadoTexto">No hay solicitud registrada aún.</span>
+        </div>
+        <button id="btnCerrarRuta" class="btn-ocultar">Cerrar</button>
+    </section>
+
+    <!-- Modal confirmación -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-contenido">
+            <h2>¿Estás seguro de tus datos?</h2>
+            <p>Si la información es correcta, confirma para enviar tu solicitud.</p>
+            <div class="modal-botones">
+                <button id="btnNo" class="btn-secundario">No, quiero corregir</button>
+                <button id="btnSi" class="btn-primario">Sí, enviar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
