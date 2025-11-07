@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programa de Apoyo - ONG USA Helps You</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+
+    <main class="form-wrapper">
+        <h1>PROGRAMA DE APOYO</h1>
+        <h2 class="subtitle">ONG USA Helps You</h2>
+
+        <p class="welcome-text">
+            USA Helps You es una organización sin fines de lucro que busca apoyar a personas y familias
+            mediante pequeños aportes económicos y visibilidad digital responsable.
+        </p>
+        <ul class="welcome-list">
+            <li>Impulsamos historias reales y contenidos positivos.</li>
+            <li>No solicitamos pagos ni depósitos para participar.</li>
+            <li>Tu información se utiliza solo para validar identidad y contacto.</li>
+            <li>Buscamos una comunidad solidaria, seria y transparente.</li>
+        </ul>
+
+        <p class="welcome-text">
+            Antes de registrarte, por favor lee y acepta las condiciones:
+        </p>
+
+        <div class="conditions-box">
+            <p>
+                ✔ La participación es gratuita y voluntaria.<br>
+                ✔ El apoyo es limitado y sujeto a verificación de datos reales.<br>
+                ✔ Entregar datos falsos puede anular tu solicitud.<br>
+                ✔ Al registrarte autorizas que la ONG se comunique contigo por los medios proporcionados.<br>
+            </p>
+        </div>
+
+        <div class="input-group check-group">
+            <label class="check-label">
+                <input type="checkbox" id="aceptoCondiciones" />
+                <span>He leído y estoy de acuerdo con las condiciones del Programa de Apoyo de USA Helps You.</span>
+            </label>
+        </div>
+
+        <button id="btnIrFormulario" class="btn-enviar" disabled>
+            REGÍSTRATE AHORA
+        </button>
+
+        <p class="nota-final">
+            Al continuar, accederás al formulario oficial donde registraremos tu solicitud de apoyo.
+        </p>
+    </main>
+
+    <script>
+        const chk = document.getElementById('aceptoCondiciones');
+        const btn = document.getElementById('btnIrFormulario');
+
+        chk.addEventListener('change', () => {
+            btn.disabled = !chk.checked;
+        });
+
+        btn.addEventListener('click', () => {
+            if (!btn.disabled) {
+                window.location.href = 'formulario.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

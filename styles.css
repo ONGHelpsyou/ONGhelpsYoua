@@ -1,0 +1,424 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Fondo animado */
+.bg-animation {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(120deg, #5a2dff, #ff4fa3, #26c6da, #ffe24f);
+    background-size: 300% 300%;
+    animation: gradientMove 14s ease infinite;
+    filter: blur(4px);
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.oculto {
+    display: none;
+}
+
+/* Contenedor principal */
+.form-wrapper {
+    max-width: 560px;
+    margin: 30px auto 16px;
+    padding: 22px 18px 22px;
+    background: rgba(4, 6, 18, 0.96);
+    border-radius: 20px;
+    box-shadow: 0 16px 46px rgba(0, 0, 0, 0.55);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.form-wrapper h1 {
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 4px;
+    letter-spacing: 0.6px;
+}
+
+.form-wrapper .subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.85;
+    margin-bottom: 10px;
+}
+
+/* Textos bienvenida */
+.welcome-text {
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+.welcome-list {
+    margin-left: 16px;
+    margin-bottom: 10px;
+    font-size: 0.84rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.welcome-list li {
+    margin-bottom: 4px;
+}
+
+.conditions-box {
+    margin: 8px 0 10px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(10, 14, 40, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Checkbox */
+.check-group {
+    margin-top: 4px;
+}
+
+.check-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.check-label input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-group label {
+    font-size: 0.82rem;
+    color: #d3d8ff;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(8, 10, 30, 0.98);
+    color: #fff;
+    font-size: 0.86rem;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.32);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #ff90e8;
+    box-shadow: 0 0 10px rgba(255, 144, 232, 0.32);
+}
+
+/* Acordeones */
+.acordeon {
+    padding: 9px 10px;
+    border-radius: 10px;
+    background: rgba(8, 10, 30, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.86rem;
+}
+
+.acordeon .flecha {
+    font-size: 0.7rem;
+}
+
+.acordeon-lista {
+    margin-top: 4px;
+    background: rgba(8, 10, 30, 0.98);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    max-height: 180px;
+    overflow-y: auto;
+    font-size: 0.82rem;
+    position: relative;
+    z-index: 5;
+}
+
+.acordeon-lista div {
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+.acordeon-lista div:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Teléfono */
+.phone-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.phone-flag {
+    font-size: 1.1rem;
+}
+
+.phone-code {
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.82rem;
+}
+
+.phone-wrapper input {
+    flex: 1;
+}
+
+/* Captcha */
+.captcha-text {
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.codigo-verificacion-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.codigo-verificacion {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.btn-mini {
+    padding: 5px 9px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.btn-mini:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.mensaje-error {
+    font-size: 0.76rem;
+    color: #ff9b9b;
+}
+
+/* Botones */
+.btn-enviar,
+.btn-mostrar,
+.btn-ocultar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ff4fa3, #ffe24f);
+    color: #161622;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+    transition: all 0.2s ease;
+}
+
+.btn-mostrar {
+    background: linear-gradient(90deg, #26c6da, #ffe24f);
+}
+
+.btn-ocultar {
+    background: linear-gradient(90deg, #ff4fa3, #26c6da);
+}
+
+.btn-enviar:hover,
+.btn-mostrar:hover,
+.btn-ocultar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65);
+}
+
+.btn-enviar:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Mensaje éxito */
+.mensaje-exito {
+    margin-top: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #9cffb3;
+    text-align: center;
+    min-height: 24px;
+}
+
+/* Nota */
+.nota-final {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* Ruta solicitud */
+.ruta-solicitud {
+    max-width: 560px;
+    margin: 8px auto 24px;
+    padding: 16px 14px 16px;
+    background: rgba(4, 6, 18, 0.97);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.ruta-solicitud h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.estado-solicitud {
+    padding: 12px 10px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.estado-ninguno {
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.estado-celeste {
+    background: rgba(38, 198, 218, 0.15);
+    color: #b3ecff;
+    border-color: #26c6da;
+}
+
+.estado-amarillo {
+    background: rgba(255, 226, 79, 0.18);
+    color: #ffe24f;
+    border-color: #ffe24f;
+}
+
+.estado-rojo {
+    background: rgba(255, 79, 79, 0.18);
+    color: #ff6b6b;
+    border-color: #ff4f4f;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 20;
+}
+
+.modal.activo {
+    display: flex;
+}
+
+.modal-contenido {
+    width: 90%;
+    max-width: 360px;
+    background: #0d1020;
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    color: #fff;
+}
+
+.modal-contenido h2 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+}
+
+.modal-contenido p {
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+}
+
+.modal-botones {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primario,
+.btn-secundario {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.84rem;
+    font-weight: 600;
+    transition: all 0.18s ease;
+}
+
+.btn-primario {
+    background: linear-gradient(90deg, #ff4fa3, #ffe24f);
+    color: #161622;
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .form-wrapper {
+        margin: 18px 10px 12px;
+        padding: 18px 10px 16px;
+    }
+}
